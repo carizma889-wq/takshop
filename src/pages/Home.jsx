@@ -1,7 +1,8 @@
-
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <h1>home</h1>
+    </div>
   )
 }
 
