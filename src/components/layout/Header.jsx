@@ -45,7 +45,7 @@ function Header() {
         </button>
         <div className="header_icon">
           <img src="/icons/icon.png" alt="" />
-          <h1>Shop</h1>
+          <h1>TakShop</h1>
         </div>
         <ul className={`header_list ${isOpen ? "is-open" : ""}`}>
           {navLinks.map((nav) => {
