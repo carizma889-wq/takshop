@@ -1,10 +1,16 @@
+$header-height: 104px;
+
 .section_header {
+  margin-bottom: 100px;
+  background: var(--color-surface);
+  transition: background-color 0.3s;
+
   padding: 0 clamp(16px, 5vw, 40px);
   position: relative;
   box-shadow: 0px 22px 10px -5px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid #831fc1;
+  border-bottom: 2px solid var(--color-primary);
   .content {
-    height: 104px;
+    height: $header-height;
   }
   .content,
   .header_icon,
@@ -22,7 +28,7 @@
     }
     h1 {
       font-size: 23px;
-      color: #831fc1;
+      color: var(--color-primary);
     }
   }
   .header_list {
@@ -31,35 +37,178 @@
 
     .title {
       text-decoration: none;
-      color: #131313;
+      color: var(--color-text);
       text-transform: capitalize;
       cursor: pointer;
       transition: 0.4s;
       &:hover {
-        color: #9139c7;
+        color: var(--color-primary-hover);
         transition: 0.4s;
       }
     }
   }
+  .has_mega {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+
+    &.is-active .title {
+      color: var(--color-primary);
+    }
+  }
+  .mega_toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    svg {
+      color: var(--color-primary);
+      transition: transform 0.3s;
+    }
+    &[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+  }
+  .mega_menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1200px, 100%);
+    padding: 32px 36px;
+    background: var(--color-surface);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    z-index: 40;
+  }
+  .mega_view_all {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+    text-decoration: none;
+    &::after {
+      content: "›";
+      font-size: 20px;
+    }
+  }
+  .mega_columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+  }
+  .mega_title {
+    margin-bottom: 24px;
+    padding-left: 8px;
+    border-left: 3px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .mega_column ul {
+    display: grid;
+    gap: 24px;
+  }
+  .mega_column a {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+    line-height: 32px;
+    transition: 0.4s;
+    &:hover {
+      color: var(--color-primary-hover);
+    }
+  }
+
+  .search_bar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px clamp(16px, 5vw, 40px);
+    background: var(--color-surface);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    z-index: 30;
+    animation: search_slide 0.25s ease;
+
+    input {
+      flex: 1;
+      height: 48px;
+      padding: 0 16px;
+      border: 1px solid var(--color-primary);
+      border-radius: 8px;
+      font: inherit;
+      outline: none;
+      background: var(--color-surface);
+      color: var(--color-text);
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(131, 31, 193, 0.2);
+      }
+    }
+    .search_submit {
+      height: 48px;
+      padding: 0 24px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--color-primary);
+      color: #fff;
+      font: inherit;
+      cursor: pointer;
+      transition: 0.4s;
+      &:hover {
+        background-color: var(--color-primary-hover);
+      }
+    }
+    .search_close {
+      padding: 0 8px;
+      border: none;
+      background: none;
+      color: var(--color-text);
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+    }
+  }
+
   .header_left {
     gap: 10px;
 
     .icon_search img,
-    .icon_mode img,
     .icon_basket img {
       width: 30px;
       cursor: pointer;
     }
-    button {
+    .icon_mode {
+      display: inline-flex;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .icon_search {
+      display: inline-flex;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .btn_login {
       padding: 9px 24px;
       border: none;
       border-radius: 8px;
-      background-color: #831fc1;
+      background-color: var(--color-primary);
       color: white;
       cursor: pointer;
       transition: 0.4s;
       &:hover {
-        background-color: #9139c7;
+        background-color: var(--color-primary-hover);
         transition: 0.4s;
       }
     }
@@ -73,7 +222,7 @@
     background: none;
     border: none;
     padding: 0;
-    color: #131313;
+    color: var(--color-text);
     cursor: pointer;
   }
 
@@ -81,7 +230,7 @@
     .burger {
       display: inline-flex;
     }
-    .header_left button,
+    .header_left .btn_login,
     .header_left .icon_basket {
       display: none;
     }
@@ -95,7 +244,7 @@
       flex-direction: column;
       align-items: stretch;
       gap: 0;
-      background: #fff;
+      background: var(--color-surface);
       border-radius: 0 0 12px 12px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
       z-index: 20;
@@ -116,18 +265,47 @@
         padding: 5px 14px;
         border: none;
         border-radius: 8px;
-        background-color: #831fc1;
+        background-color: var(--color-primary);
         color: white;
         cursor: pointer;
         transition: 0.4s;
         &:hover {
-          background-color: #9139c7;
+          background-color: var(--color-primary-hover);
           transition: 0.4s;
         }
-        title{
-            padding:0 ;
+        .title {
+          padding: 0;
         }
       }
+    }
+
+    .has_mega {
+      flex-wrap: wrap;
+      height: auto;
+      .title {
+        flex: 1;
+      }
+    }
+    .header_list .mega_toggle {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      text-align: left;
+    }
+    .mega_menu {
+      position: static;
+      transform: none;
+      flex-basis: 100%;
+      width: auto;
+      padding: 0 24px 16px;
+      box-shadow: none;
+    }
+    .mega_columns {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .mega_column ul {
+      gap: 4px;
     }
 
     .header_overlay {
@@ -140,5 +318,16 @@
       background: rgba(0, 0, 0, 0.5);
       z-index: 10;
     }
+  }
+}
+
+@keyframes search_slide {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }

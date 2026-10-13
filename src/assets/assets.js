@@ -1,8 +1,8 @@
 export const navLinks = [
   { id: "home", label: "Home", path: "/" },
-  { id: "categories", label: "Categories", path: "/store", hasMegaMenu: true },
+  { id: "categories", label: "Categories", hasMegaMenu: true },
   { id: "blog", label: "Blog", path: "/blog" },
-  { id: "discounts", label: "Discounts", path: "/store?discount=true" },
+  { id: "discounts", label: "Discounts", path: "/#discounts" },
   { id: "about", label: "About Us", path: "/about" },
   { id: "contact", label: "Contact Us", path: "/contact" },
 ];
@@ -46,3 +46,54 @@ export const megaMenu = {
     },
   ],
 };
+
+export const categoryBanners = [
+  {
+    id: "laptops",
+    img: "/images/image_swipper(1).png",
+    alt: "Gaming laptops",
+    href: "/category/laptops",
+  },
+  {
+    id: "smartphones",
+    img: "/images/image_swipper(2).png",
+    alt: "Latest smartphones",
+    href: "/category/smartphones",
+  },
+  {
+    id: "smartphones",
+    img: "/images/image_swipper(3).png",
+    alt: "Latest smartphones",
+    href: "/category/smartphones",
+  },
+  {
+    id: "smartphones",
+    img: "/images/image_swipper(4).png",
+    alt: "Latest smartphones",
+    href: "/category/smartphones",
+  },
+  {
+    id: "smartphones",
+    img: "/images/image_swipper(5).png",
+    alt: "Latest smartphones",
+    href: "/category/smartphones",
+  },
+  {
+    id: "smartphones",
+    img: "/images/image_swipper(6).png",
+    alt: "Latest smartphones",
+    href: "/category/smartphones",
+  },
+  {
+    id: "smartphones",
+    img: "/images/image_swipper(7).png",
+    alt: "Latest smartphones",
+    href: "/category/smartphones",
+  },
+  {
+    id: "smartphones",
+    img: "/images/image_swipper(8).png",
+    alt: "Latest smartphones",
+    href: "/category/smartphones",
+  },
+];

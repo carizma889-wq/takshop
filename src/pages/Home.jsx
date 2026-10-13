@@ -1,9 +1,15 @@
+
+import BannerSlider from "../components/layout/BannerSlider";
+import { categoryBanners } from "../assets/assets";
 function Home() {
   return (
     <div>
-      <h1>home</h1>
+      <BannerSlider slides={categoryBanners} />
+      <section id="discounts" style={{ minHeight: 400, marginTop: 800 }}>
+        Discounts section
+      </section>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

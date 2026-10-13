@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import ScrollToHash from "./ScrollToHash";
 
 function MainLayout() {
   return (
-    <div >
+    <div>
+      <ScrollToHash />
       <Header />
-      <main >
+      <main>
         <Outlet />
       </main>
       <Footer />
