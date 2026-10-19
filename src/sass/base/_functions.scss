@@ -1,0 +1,7 @@
+@use "sass:math";
+
+@function fluid($min, $max, $min-vw: 320px, $max-vw: 1200px) {
+  $slope: math.div($max - $min, $max-vw - $min-vw);
+  $intercept: $min - $slope * $min-vw;
+  @return clamp(#{$min}, #{$intercept} + #{$slope * 100}vw, #{$max});
+}

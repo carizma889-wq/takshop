@@ -1,3 +1,4 @@
+import { v4 as uuid } from "uuid";
 export const navLinks = [
   { id: "home", label: "Home", path: "/" },
   { id: "categories", label: "Categories", hasMegaMenu: true },
@@ -55,45 +56,75 @@ export const categoryBanners = [
     href: "/category/laptops",
   },
   {
-    id: "smartphones",
+    id: "smartphones1",
     img: "/images/image_swipper(2).png",
     alt: "Latest smartphones",
     href: "/category/smartphones",
   },
   {
-    id: "smartphones",
+    id: "smartphones2",
     img: "/images/image_swipper(3).png",
     alt: "Latest smartphones",
     href: "/category/smartphones",
   },
   {
-    id: "smartphones",
+    id: "smartphones3",
     img: "/images/image_swipper(4).png",
     alt: "Latest smartphones",
     href: "/category/smartphones",
   },
   {
-    id: "smartphones",
+    id: "smartphones4",
     img: "/images/image_swipper(5).png",
     alt: "Latest smartphones",
     href: "/category/smartphones",
   },
   {
-    id: "smartphones",
+    id: "smartphones5",
     img: "/images/image_swipper(6).png",
     alt: "Latest smartphones",
     href: "/category/smartphones",
   },
   {
-    id: "smartphones",
+    id: "smartphones6",
     img: "/images/image_swipper(7).png",
     alt: "Latest smartphones",
     href: "/category/smartphones",
   },
   {
-    id: "smartphones",
+    id: "smartphones7",
     img: "/images/image_swipper(8).png",
     alt: "Latest smartphones",
     href: "/category/smartphones",
+  },
+];
+
+export const data = [
+  { id: uuid(), name: "phone", img: "/products/phone(1).png" },
+  { id: uuid(), name: "lap top", img: "/products/laptop(1).png" },
+  {
+    id: uuid(),
+    name: "Supplements",
+    img: "/products/PlayStationController(1).png",
+  },
+  {
+    id: uuid(),
+    name: "Headphones and headsets",
+    img: "/products/earphone(1).png",
+  },
+  {
+    id: uuid(),
+    name: "camera",
+    img: "/products/camera(1).png",
+  },
+  {
+    id: uuid(),
+    name: "Internet",
+    img: "/products/Router(1).png",
+  },
+  {
+    id: uuid(),
+    name: "Smart watch",
+    img: "/products/smartwatch(1).png",
   },
 ];

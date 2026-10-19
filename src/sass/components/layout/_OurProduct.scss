@@ -1,0 +1,76 @@
+@use "../../base/functions" as *;
+.Our_Product_section {
+  width: 100%;
+  margin-top: 75px;
+  .top_title {
+    text-align: center;
+    .title {
+      h1 {
+        color: var(--color-primary);
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 88px;
+          height: 15px;
+          border-radius: 12px;
+          background-color: #831fc1;
+          top: -25px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    .type {
+      p {
+        color: #737373;
+        font-size: 12px;
+        font-weight: lighter;
+      }
+    }
+  }
+  .content_section {
+    width: 100%;
+    margin-top: 35px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      gap: 15px;
+      li {
+        background-color: #1d1d1d;
+        border-radius: 12px;
+        padding: 24px 8px;
+        cursor: pointer;
+        @media (max-width: 800px) {
+          box-shadow: 0 0 6px 0 rgba(131, 31, 193, 20%);
+        }
+        .img {
+          img {
+            width: 140px;
+            object-fit: contain;
+          }
+        }
+        .name {
+          p {
+            color: #f5f5f5;
+            font-size: fluid(12px, 16px);
+          }
+        }
+      }
+    }
+  }
+}

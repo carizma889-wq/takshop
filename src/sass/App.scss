@@ -1,5 +1,6 @@
 @use "./components/layout/MainLayout" as *;
 @use "./base/themes" as *;
+@use "./base/functions" as *;
 @use "./pages/Home" as *;
 body {
   margin: 0;
